@@ -1,0 +1,47 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+
+        {
+            "label": "manim  preview png",
+            "type": "shell",
+            "command": "manim ${file} -s --format=png",
+            "problemMatcher": [
+                "$python"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+
+        {
+            "label": "Generate transparent .mov",
+            "type": "shell",
+            "command": "manim ${file} --transparent --fps 30 --save_sections",
+            "problemMatcher": [
+                "$python"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+
+        {
+            "label": "Generate transparent .mov and play",
+            "type": "shell",
+            "command": "manim ${file} -p --transparent --fps 30",
+            "problemMatcher": [
+                "$python"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+
+    ]
+}
